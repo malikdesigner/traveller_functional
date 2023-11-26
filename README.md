@@ -8,7 +8,7 @@ Navigate to backend folder and install libraries using npm install
 
 Also check you ip from ipconfig command on cmd and use that in the apiUrl component 
 
-Also import the db and also change the password and user in your db
+Also import the db and also change the password and user in your db. You can use xamp or any other tool
 Now you are all set
 
 open backend and client folder in separate cmd terminals and run npm start
