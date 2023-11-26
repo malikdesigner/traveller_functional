@@ -3,10 +3,12 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import apiUrl from './apiUrl';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 
 const UserPage = ({ userId }) => {
 
     const [userData, setUserData] = useState({});
+    const navigation = useNavigation();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,9 +28,9 @@ const UserPage = ({ userId }) => {
     }, [userId]);
 
     const handleSignout = () => {
-        // Implement your signout logic here
-    };
 
+        navigation.navigate('Login'); 
+    };
     return (
         <View style={styles.container}>
             <View style={styles.userInfoContainer}>
