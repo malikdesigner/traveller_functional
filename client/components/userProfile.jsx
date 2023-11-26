@@ -9,11 +9,12 @@ import { Picker } from '@react-native-picker/picker';
 import Flag from 'react-native-country-flags';
 import apiUrl from './apiUrl';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
+
 const UserProfile = () => {
-    const [selectedCountry, setSelectedCountry] = useState(null);
-    const [countries, setCountries] = useState([]);
+
     const Stack = createStackNavigator();
+    const navigation = useNavigation();
 
     const [step, setStep] = useState(1);
     const [firstName, setFirstName] = useState('');
@@ -41,13 +42,7 @@ const UserProfile = () => {
             ToastAndroid.WHITE
         );
     };
-    useEffect(() => {
-        // Fetch countries when the component mounts
-        fetch(`${apiUrl}/countries`)
-            .then((response) => response.json())
-            .then((data) => setCountries(data))
-            .catch((error) => console.error('Error fetching countries:', error));
-    }, []);
+    
     const handleSubmit = async () => {
         console.log(isChecked)
         if (!isChecked) {

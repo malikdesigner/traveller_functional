@@ -179,17 +179,7 @@ app.post('/login', (req, res) => {
         }
     });
 });
-app.get('/countries', (req, res) => {
-    const query = 'SELECT id, full_name, imgFlag FROM tbl_countries';
-    db.query(query, (err, results) => {
-        if (err) {
-            console.error('Error executing query:', err);
-            res.status(500).json({ error: 'Internal Server Error' });
-        } else {
-            res.status(200).json(results);
-        }
-    });
-});
+
 function query(sql, params) {
     return new Promise((resolve, reject) => {
         db.query(sql, params, (err, result) => {
