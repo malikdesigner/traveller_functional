@@ -70,6 +70,7 @@ const ListPost = ({ userId }) => {
 
                             <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>{`Driver: ${item.first_name} ${item.last_name}`}</Text>
                             <Text style={{ fontSize: 20, marginBottom: 10 }}>{`Seat Available: ${item.seats} `}</Text>
+                            <Text style={{ fontSize: 15, marginBottom: 4 }}>{`Car: ${item.car_type} `}</Text>
 
                             <Text>{`To: ${item.travelling_to}`}</Text>
                             <Text>{`From: ${item.travelling_from}`}</Text>
